@@ -1,7 +1,8 @@
 package com.sparky.minecraft;
 
-import org.junit.jupiter.api.Test;
 import static java.lang.System.out;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Тест для Minecraft бібліотеки.
