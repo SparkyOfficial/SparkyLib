@@ -1,7 +1,7 @@
 package com.sparky.rpc.ecs;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 import com.sparky.rpc.RpcMessage;
 

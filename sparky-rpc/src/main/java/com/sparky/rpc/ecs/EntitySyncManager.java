@@ -1,16 +1,15 @@
 package com.sparky.rpc.ecs;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 
-import com.sparky.rpc.RpcClient;
-import com.sparky.rpc.RpcServer;
-import com.sparky.rpc.RpcMessage;
-import com.sparky.ecs.EntityManager;
 import com.sparky.ecs.Entity;
-import com.sparky.ecs.Component;
+import com.sparky.ecs.EntityManager;
+import com.sparky.rpc.RpcClient;
+import com.sparky.rpc.RpcMessage;
+import com.sparky.rpc.RpcServer;
 
 /**
  * Менеджер синхронізації сутностей ECS між клієнтом і сервером.

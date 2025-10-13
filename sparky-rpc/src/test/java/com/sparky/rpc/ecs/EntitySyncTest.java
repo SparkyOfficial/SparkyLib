@@ -1,11 +1,14 @@
 package com.sparky.rpc.ecs;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import static java.lang.System.out;
 
-import com.sparky.ecs.EntityManager;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.Test;
+
 import com.sparky.ecs.Entity;
+import com.sparky.ecs.EntityManager;
 
 /**
  * Тест для синхронізації сутностей ECS.

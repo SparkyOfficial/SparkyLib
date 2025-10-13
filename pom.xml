@@ -21,6 +21,7 @@
         <module>sparky-ui</module>
         <module>sparky-assets</module>
         <module>sparky-adapters</module>
+        <module>sparky-minecraft</module>
     </modules>
 
     <properties>

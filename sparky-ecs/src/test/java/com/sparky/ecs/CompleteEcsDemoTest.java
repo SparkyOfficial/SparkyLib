@@ -1,7 +1,8 @@
 package com.sparky.ecs;
 
-import org.junit.jupiter.api.Test;
 import static java.lang.System.out;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Комплексний демонстраційний тест для всіх нових функцій ECS.
