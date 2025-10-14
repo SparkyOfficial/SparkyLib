@@ -37,7 +37,7 @@ public class WorldComponent extends Component {
         this.thunderStrength = 0.0;
     }
 
-    // Геттери та сеттери
+    
     public String getWorldName() {
         return worldName;
     }

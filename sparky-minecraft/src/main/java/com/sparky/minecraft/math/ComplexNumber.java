@@ -27,7 +27,7 @@ public class ComplexNumber {
         this.imaginary = other.imaginary;
     }
     
-    // Геттери та сеттери
+    
     public double getReal() {
         return real;
     }

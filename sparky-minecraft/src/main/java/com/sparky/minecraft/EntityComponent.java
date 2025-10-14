@@ -43,7 +43,7 @@ public class EntityComponent extends Component {
         this.customNameVisible = false;
     }
 
-    // Геттери та сеттери
+    
     public String getMinecraftEntityId() {
         return minecraftEntityId;
     }
@@ -101,7 +101,7 @@ public class EntityComponent extends Component {
 
     public void setMaxHealth(double maxHealth) {
         this.maxHealth = maxHealth;
-        // Переконуємось, що поточне здоров'я не перевищує максимальне
+        
         if (this.health > this.maxHealth) {
             this.health = this.maxHealth;
         }

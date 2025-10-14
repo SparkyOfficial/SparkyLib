@@ -1,28 +1,21 @@
-# SparkyLib Minecraft Adapter
+# Sparky Minecraft Library
 
+Спеціалізована бібліотека для розробки плагінів Minecraft на основі архітектури Entity-Component-System (ECS).
+
+## Основні можливості
+
+- Компоненти та системи для основних елементів Minecraft
+- Системи інвентаризації, крафтингу, квестів, NPC
+- Математичні бібліотеки для 3D обчислень
+- Системи частинок та візуальних ефектів
+- Повна інтеграція з Bukkit/Spigot API
+
+## Використання
+
+Дивіться демонстраційні класи для прикладів використання.
+# SparkyLib Minecraft Adapter
 ## Overview
 The SparkyLib Minecraft Adapter is a specialized library that extends the core SparkyLib framework to provide seamless integration with Minecraft (Bukkit/Spigot) servers. It leverages the Entity-Component-System (ECS) architecture to create a powerful and flexible framework for Minecraft plugin development.
-
-## Features
-
-### ECS Components for Minecraft
-- **BlockComponent** - Represents Minecraft blocks with position, type, and world information
-- **PlayerComponent** - Manages player state including health, food level, experience, and online status
-- **ItemComponent** - Handles Minecraft items with type, amount, durability, display name, and lore
-
-### ECS Systems for Minecraft
-- **BlockSystem** - Manages block manipulation and world interactions
-- **PlayerSystem** - Handles player state updates and management
-- **ItemSystem** - Manages item interactions and inventory operations
-
-### Integration Features
-- Seamless integration with Bukkit/Spigot API
-- Event-driven architecture using SparkyLib's EventBus
-- Scheduler integration for timed operations
-- Particle effects system
-- Command handling with permissions
-- Asset management for resources
-
 ## Installation
 
 Add the following dependency to your `pom.xml`:

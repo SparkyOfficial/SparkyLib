@@ -24,7 +24,7 @@ public class Vector3D {
         this.z = other.z;
     }
     
-    // Геттери та сеттери
+    
     public double getX() {
         return x;
     }

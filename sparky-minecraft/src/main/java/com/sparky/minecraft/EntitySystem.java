@@ -22,12 +22,12 @@ public class EntitySystem extends System {
 
     @Override
     public void update(List<Entity> entities) {
-        // Оновлюємо всі сутності
+        
         for (Entity entity : entities) {
             EntityComponent entityComponent = entity.getComponent(EntityComponent.class);
             if (entityComponent != null) {
-                // Тут можна додати логіку оновлення сутностей
-                // Наприклад, регенерацію здоров'я, обробку ефектів тощо
+                
+                
             }
         }
     }

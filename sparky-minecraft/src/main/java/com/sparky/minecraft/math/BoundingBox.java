@@ -24,7 +24,7 @@ public class BoundingBox {
         this.max = new Vector3D(maxX, maxY, maxZ);
     }
 
-    // Геттери та сеттери
+    
     public Vector3D getMin() {
         return new Vector3D(min);
     }

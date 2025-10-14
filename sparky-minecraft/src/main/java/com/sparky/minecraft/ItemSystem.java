@@ -15,12 +15,12 @@ public class ItemSystem extends com.sparky.ecs.System {
     
     @Override
     public void update(List<Entity> entities) {
-        // Обробляємо всі сутності з ItemComponent
+        
         for (Entity entity : entities) {
             if (entity.hasComponent(com.sparky.minecraft.ItemComponent.class)) {
                 com.sparky.minecraft.ItemComponent item = entity.getComponent(com.sparky.minecraft.ItemComponent.class);
-                // Тут буде логіка для взаємодії з предметами Minecraft
-                // В реальній реалізації тут була б інтеграція з Bukkit API
+                
+                
                 processItemUpdate(item);
             }
         }
@@ -30,15 +30,7 @@ public class ItemSystem extends com.sparky.ecs.System {
      * Обробляє оновлення предмету.
      */
     private void processItemUpdate(com.sparky.minecraft.ItemComponent item) {
-        // В реальній реалізації тут була б взаємодія з сервером Minecraft
-        // Наприклад:
-        // ItemStack stack = new ItemStack(Material.getMaterial(item.getItemType()));
-        // ItemMeta meta = stack.getItemMeta();
-        // if (meta != null) {
-        //     meta.setDisplayName(item.getDisplayName());
-        //     meta.setLore(Arrays.asList(item.getLore()));
-        //     stack.setItemMeta(meta);
-        // }
+        
     }
     
     /**

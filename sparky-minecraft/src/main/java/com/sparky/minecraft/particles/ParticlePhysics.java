@@ -26,7 +26,7 @@ public class ParticlePhysics {
         this.restitution = 0.8; // 80% енергії зберігається при відскакуванні
     }
 
-    // Геттери та сеттери
+    
     public Vector3D getPosition() {
         return new Vector3D(position);
     }

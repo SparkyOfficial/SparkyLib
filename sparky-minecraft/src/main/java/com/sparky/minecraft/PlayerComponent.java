@@ -33,7 +33,7 @@ public class PlayerComponent extends Component {
         this.isOnline = isOnline;
     }
     
-    // Геттери та сеттери
+    
     public String getPlayerName() {
         return playerName;
     }

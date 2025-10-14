@@ -26,7 +26,7 @@ public class ItemComponent extends Component {
         this.lore = lore != null ? lore : new String[0];
     }
     
-    // Геттери та сеттери
+    
     public String getItemType() {
         return itemType;
     }

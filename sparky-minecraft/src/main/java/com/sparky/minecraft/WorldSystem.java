@@ -32,10 +32,10 @@ public class WorldSystem extends System {
         for (Entity entity : entities) {
             WorldComponent world = entity.getComponent(WorldComponent.class);
             if (world != null) {
-                // Оновлюємо час світу
+                
                 world.updateTime(timeDelta);
                 
-                // Оновлюємо погоду
+                
                 world.updateWeather(0.016); // Припускаємо 60 FPS
             }
         }

@@ -40,7 +40,7 @@ public class ParticleEffect3D extends ParticleEffect {
         this.isAlive = true;
     }
     
-    // Геттери та сеттери
+    
     public Vector3D getPosition() {
         return position;
     }

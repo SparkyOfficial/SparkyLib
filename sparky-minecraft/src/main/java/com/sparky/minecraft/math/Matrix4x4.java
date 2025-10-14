@@ -10,7 +10,7 @@ public class Matrix4x4 {
     
     public Matrix4x4() {
         elements = new double[4][4];
-        // Ініціалізуємо як одиничну матрицю
+        
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 elements[i][j] = (i == j) ? 1.0 : 0.0;
@@ -35,7 +35,7 @@ public class Matrix4x4 {
         }
     }
     
-    // Геттери та сеттери
+    
     public double get(int row, int col) {
         if (row < 0 || row >= 4 || col < 0 || col >= 4) {
             throw new IndexOutOfBoundsException("Matrix indices must be between 0 and 3");

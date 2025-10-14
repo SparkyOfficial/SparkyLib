@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73b1bf4a-7370-465f-ab0c-738821355505" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/EntityManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

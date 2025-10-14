@@ -26,7 +26,7 @@ public class Quaternion {
         this.z = other.z;
     }
 
-    // Геттери та сеттери
+    
     public double getW() {
         return w;
     }

@@ -24,7 +24,6 @@ public class BlockComponent extends Component {
         this.worldName = worldName;
     }
     
-    // Геттери та сеттери
     public String getBlockType() {
         return blockType;
     }

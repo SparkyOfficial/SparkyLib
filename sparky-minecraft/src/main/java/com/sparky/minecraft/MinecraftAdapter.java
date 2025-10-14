@@ -20,7 +20,7 @@ public class MinecraftAdapter {
     private final EventBus eventBus;
     private final EntityManager entityManager;
     
-    // Системи Minecraft
+    
     private final com.sparky.minecraft.BlockSystem blockSystem;
     private final com.sparky.minecraft.PlayerSystem playerSystem;
     private final com.sparky.minecraft.ItemSystem itemSystem;
@@ -31,12 +31,10 @@ public class MinecraftAdapter {
         this.eventBus = EventBus.getInstance();
         this.entityManager = new EntityManager();
         
-        // Ініціалізуємо системи
         this.blockSystem = new com.sparky.minecraft.BlockSystem();
         this.playerSystem = new com.sparky.minecraft.PlayerSystem();
         this.itemSystem = new com.sparky.minecraft.ItemSystem();
         
-        // Налаштовуємо системи
         this.blockSystem.setEntityManager(entityManager);
         this.playerSystem.setEntityManager(entityManager);
         this.itemSystem.setEntityManager(entityManager);
@@ -51,10 +49,10 @@ public class MinecraftAdapter {
      * Метод, який викликається кожен тік сервера.
      */
     private void onTick() {
-        // Update the scheduler
+        
         scheduler.tick();
         
-        // Update all systems
+        
         update();
     }
     
@@ -62,12 +60,12 @@ public class MinecraftAdapter {
      * Оновлює всі системи Minecraft.
      */
     public void update() {
-        // Отримуємо сутності для кожної системи
+        
         java.util.List<com.sparky.ecs.Entity> blockEntities = entityManager.getEntitiesForSystem(blockSystem);
         java.util.List<com.sparky.ecs.Entity> playerEntities = entityManager.getEntitiesForSystem(playerSystem);
         java.util.List<com.sparky.ecs.Entity> itemEntities = entityManager.getEntitiesForSystem(itemSystem);
         
-        // Оновлюємо системи
+        
         blockSystem.update(blockEntities);
         playerSystem.update(playerEntities);
         itemSystem.update(itemEntities);
