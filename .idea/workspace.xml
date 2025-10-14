@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73b1bf4a-7370-465f-ab0c-738821355505" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/EntityManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/sparky-ecs/src/main/java/com/sparky/ecs/System.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,18 +26,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/Богдан/Desktop/SparkyLib",
-    "onboarding.tips.debug.path": "C:/Users/Богдан/Desktop/SparkyLib/SparkyLib/src/main/java/org/x/Main.java",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Богдан/Desktop/SparkyLib&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Богдан/Desktop/SparkyLib/SparkyLib/src/main/java/org/x/Main.java&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SparkyLib" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SparkyLib" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="73b1bf4a-7370-465f-ab0c-738821355505" name="Changes" comment="" />

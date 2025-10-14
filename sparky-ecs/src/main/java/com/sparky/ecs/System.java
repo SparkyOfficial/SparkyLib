@@ -30,4 +30,14 @@ public abstract class System {
     public Set<Class<? extends Component>> getRequiredComponents() {
         return new HashSet<>();
     }
+    
+    /**
+     * Виконує логіку системи, отримуючи сутності з менеджера сутностей.
+     */
+    public void update() {
+        if (entityManager != null) {
+            List<Entity> entities = entityManager.getEntitiesForSystem(this);
+            update(entities);
+        }
+    }
 }

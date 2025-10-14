@@ -37,8 +37,42 @@ public class Entity {
         components.remove(componentClass);
     }
     
-    // Package-private getter for EntityManager
-    Map<Class<? extends Component>, Component> getComponents() {
-        return components;
+    /**
+     * Отримує всі компоненти сутності.
+     *
+     * @return мапа компонентів
+     */
+    public Map<Class<? extends Component>, Component> getComponents() {
+        return new HashMap<>(components);
+    }
+    
+    /**
+     * Отримує кількість компонентів у сутності.
+     *
+     * @return кількість компонентів
+     */
+    public int getComponentCount() {
+        return components.size();
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Entity entity = (Entity) obj;
+        return id == entity.id;
+    }
+    
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
+    }
+    
+    @Override
+    public String toString() {
+        return "Entity{" +
+                "id=" + id +
+                ", components=" + components.size() +
+                '}';
     }
 }
