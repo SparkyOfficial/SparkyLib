@@ -1,10 +1,11 @@
 package com.sparky.minecraft;
 
-import com.sparky.ecs.Entity;
-import com.sparky.ecs.Component;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
+
+import com.sparky.ecs.Component;
+import com.sparky.ecs.Entity;
 
 /**
  * Система для управління блоками Minecraft.

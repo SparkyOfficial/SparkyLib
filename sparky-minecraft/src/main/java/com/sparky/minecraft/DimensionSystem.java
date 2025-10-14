@@ -1,16 +1,16 @@
 package com.sparky.minecraft;
 
-import com.sparky.ecs.Entity;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import com.sparky.ecs.Component;
+import com.sparky.ecs.Entity;
 import com.sparky.ecs.EntityManager;
 import com.sparky.ecs.System;
 import com.sparky.minecraft.DimensionComponent.DimensionType;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.UUID;
 
 /**
  * Система для управління вимірами в Minecraft.

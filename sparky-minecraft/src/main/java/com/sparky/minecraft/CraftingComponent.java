@@ -1,8 +1,9 @@
 package com.sparky.minecraft;
 
-import com.sparky.ecs.Component;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.sparky.ecs.Component;
 
 /**
  * Компонент крафтингу для представлення можливостей крафтингу сутності в ECS.

@@ -1,12 +1,13 @@
 package com.sparky.minecraft;
 
-import com.sparky.ecs.Entity;
-import com.sparky.ecs.Component;
-import com.sparky.ecs.EntityManager;
-import com.sparky.minecraft.math.Vector3D;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
+
+import com.sparky.ecs.Component;
+import com.sparky.ecs.Entity;
+import com.sparky.ecs.EntityManager;
+import com.sparky.minecraft.math.Vector3D;
 
 /**
  * Система для управління неігровими персонажами (NPC) в грі.

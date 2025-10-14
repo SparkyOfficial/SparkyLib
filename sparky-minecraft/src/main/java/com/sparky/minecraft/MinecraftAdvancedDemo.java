@@ -1,13 +1,11 @@
 package com.sparky.minecraft;
 
-import com.sparky.ecs.EntityManager;
 import com.sparky.ecs.Entity;
-import com.sparky.minecraft.math.Vector3D;
+import com.sparky.ecs.EntityManager;
 import com.sparky.minecraft.BiomeComponent.BiomeType;
 import com.sparky.minecraft.BiomeComponent.ClimateType;
 import com.sparky.minecraft.DimensionComponent.DimensionType;
 import com.sparky.minecraft.PotionEffectComponent.PotionEffectType;
-import com.sparky.minecraft.PotionEffectComponent.EffectParticles;
 
 /**
  * Демонстрація розширених можливостей бібліотеки Sparky Minecraft.

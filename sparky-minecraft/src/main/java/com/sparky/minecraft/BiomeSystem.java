@@ -1,18 +1,18 @@
 package com.sparky.minecraft;
 
-import com.sparky.ecs.Entity;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+
 import com.sparky.ecs.Component;
+import com.sparky.ecs.Entity;
 import com.sparky.ecs.EntityManager;
 import com.sparky.ecs.System;
 import com.sparky.minecraft.BiomeComponent.BiomeType;
 import com.sparky.minecraft.BiomeComponent.ClimateType;
-import com.sparky.minecraft.math.Vector3D;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Random;
 
 /**
  * Система для управління біомами в Minecraft.

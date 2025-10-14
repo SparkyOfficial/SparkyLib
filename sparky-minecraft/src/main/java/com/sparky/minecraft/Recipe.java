@@ -1,9 +1,7 @@
 package com.sparky.minecraft;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Представляє рецепт крафтингу в Minecraft.

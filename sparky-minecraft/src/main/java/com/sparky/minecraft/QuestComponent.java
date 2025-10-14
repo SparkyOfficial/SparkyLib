@@ -1,10 +1,11 @@
 package com.sparky.minecraft;
 
-import com.sparky.ecs.Component;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.sparky.ecs.Component;
 
 /**
  * Компонент квестів для представлення активних та завершених квестів сутності в ECS.

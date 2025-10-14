@@ -1,17 +1,18 @@
 package com.sparky.minecraft;
 
-import com.sparky.ecs.Entity;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import com.sparky.ecs.Component;
+import com.sparky.ecs.Entity;
 import com.sparky.ecs.EntityManager;
 import com.sparky.ecs.System;
-import com.sparky.minecraft.PotionEffectComponent.PotionEffectType;
 import com.sparky.minecraft.PotionEffectComponent.EffectParticles;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
+import com.sparky.minecraft.PotionEffectComponent.PotionEffectType;
 
 /**
  * Система для управління ефектами зілля в Minecraft.

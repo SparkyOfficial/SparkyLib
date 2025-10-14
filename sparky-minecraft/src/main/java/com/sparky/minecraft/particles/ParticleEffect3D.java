@@ -1,11 +1,11 @@
 package com.sparky.minecraft.particles;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.sparky.minecraft.math.Vector3D;
 import com.sparky.particles.ParticleEffect;
 import com.sparky.particles.ParticleSpec;
-import com.sparky.minecraft.math.Vector3D;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Тривимірний ефект частинок для Minecraft з розширеними можливостями.
