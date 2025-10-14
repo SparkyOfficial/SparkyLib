@@ -1,9 +1,11 @@
 package com.sparky.minecraft;
 
+import org.bukkit.plugin.java.JavaPlugin;
+
 import com.sparky.core.SparkyLogger;
 import com.sparky.ecs.EntityManager;
-import com.sparky.bukkit.BukkitAdapter;
-import org.bukkit.plugin.java.JavaPlugin;
+import com.sparky.events.EventBus;
+import com.sparky.scheduler.SimpleScheduler;
 
 /**
  * Основний адаптер для інтеграції SparkyLib з Minecraft.
@@ -14,7 +16,8 @@ public class MinecraftAdapter {
     private static final SparkyLogger logger = SparkyLogger.getLogger(MinecraftAdapter.class);
     
     private final JavaPlugin plugin;
-    private final BukkitAdapter bukkitAdapter;
+    private final SimpleScheduler scheduler;
+    private final EventBus eventBus;
     private final EntityManager entityManager;
     
     // Системи Minecraft
@@ -24,7 +27,8 @@ public class MinecraftAdapter {
     
     public MinecraftAdapter(JavaPlugin plugin) {
         this.plugin = plugin;
-        this.bukkitAdapter = new BukkitAdapter(plugin);
+        this.scheduler = new SimpleScheduler();
+        this.eventBus = EventBus.getInstance();
         this.entityManager = new EntityManager();
         
         // Ініціалізуємо системи
@@ -37,7 +41,21 @@ public class MinecraftAdapter {
         this.playerSystem.setEntityManager(entityManager);
         this.itemSystem.setEntityManager(entityManager);
         
+        // Register the scheduler task
+        plugin.getServer().getScheduler().runTaskTimer(plugin, this::onTick, 1L, 1L);
+        
         logger.info("MinecraftAdapter initialized for plugin: " + plugin.getName());
+    }
+    
+    /**
+     * Метод, який викликається кожен тік сервера.
+     */
+    private void onTick() {
+        // Update the scheduler
+        scheduler.tick();
+        
+        // Update all systems
+        update();
     }
     
     /**
@@ -63,17 +81,24 @@ public class MinecraftAdapter {
     }
     
     /**
+     * Отримує планувальник.
+     */
+    public SimpleScheduler getScheduler() {
+        return scheduler;
+    }
+    
+    /**
+     * Отримує шину подій.
+     */
+    public EventBus getEventBus() {
+        return eventBus;
+    }
+    
+    /**
      * Отримує менеджер сутностей.
      */
     public EntityManager getEntityManager() {
         return entityManager;
-    }
-    
-    /**
-     * Отримує адаптер Bukkit.
-     */
-    public BukkitAdapter getBukkitAdapter() {
-        return bukkitAdapter;
     }
     
     /**
