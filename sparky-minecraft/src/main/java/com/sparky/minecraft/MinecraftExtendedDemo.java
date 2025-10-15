@@ -3,6 +3,18 @@ package com.sparky.minecraft;
 import com.sparky.ecs.Entity;
 import com.sparky.ecs.EntityManager;
 import com.sparky.minecraft.math.Vector3D;
+// додаємо імпорти нових функцій
+import com.sparky.minecraft.world.ProceduralWorldGenerator;
+import com.sparky.minecraft.world.ChunkData;
+import com.sparky.minecraft.ai.BehaviorTree;
+import com.sparky.minecraft.ai.SequenceNode;
+import com.sparky.minecraft.ai.FindPlayerNode;
+import com.sparky.minecraft.ai.MoveToNode;
+import com.sparky.minecraft.ai.AttackNode;
+import com.sparky.minecraft.pathfinding.AStarPathfinder;
+import com.sparky.minecraft.pathfinding.WorldGrid;
+import com.sparky.minecraft.physics.PhysicsWorld;
+import com.sparky.minecraft.physics.RigidBody;
 
 /**
  * Розширена демонстрація бібліотеки Sparky для Minecraft з новими компонентами та системами.
@@ -39,6 +51,11 @@ public class MinecraftExtendedDemo {
         
         // Демонстрація погоди
         demonstrateWeatherSystem(entityManager);
+        
+        System.out.println();
+        
+        // Демонстрація нових розширених функцій
+        demonstrateAdvancedFeatures();
         
         System.out.println("\n=== Демонстрація завершена ===");
     }
@@ -150,7 +167,7 @@ public class MinecraftExtendedDemo {
         miningQuest.setRewardPoints(5);
         miningQuest.addReward(new ItemStack("torch", 5));
         
-        System.out.println("  3.3. Створено квест: " + miningQuest.getQuestName());
+        System.out.println("  3.3. Створено квест: " + miningQuest.getQuestId());
         System.out.println("    - Опис: " + miningQuest.getDescription());
         System.out.println("    - Необхідний прогрес: " + miningQuest.getRequiredProgress());
         System.out.println("    - Нагороди: " + miningQuest.getRewards().length + " предметів");
@@ -163,8 +180,10 @@ public class MinecraftExtendedDemo {
         boolean progressUpdated = questSystem.updateQuestProgress(playerEntity.getId(), miningQuest, 7);
         System.out.println("  3.5. Прогрес квесту оновлено: " + progressUpdated);
         
-        // Перевіряємо прогрес
-        int progress = questSystem.getQuestProgressForEntity(playerEntity.getId(), miningQuest);
+        // Перевіряємо прогрес (виправляємо виклик методу)
+        // Спочатку отримуємо компонент квестів
+        QuestComponent questComponent = playerEntity.getComponent(QuestComponent.class);
+        int progress = questComponent != null ? questComponent.getQuestProgress(miningQuest) : 0;
         System.out.println("  3.6. Поточний прогрес квесту: " + progress + "/" + miningQuest.getRequiredProgress());
         
         // Перевіряємо, чи квест активний
@@ -247,5 +266,40 @@ public class MinecraftExtendedDemo {
         // Перевіряємо, чи іде дощ
         boolean isRaining = weatherSystem.isRaining(worldEntity.getId());
         System.out.println("  5.5. Зараз іде дощ: " + isRaining);
+    }
+    
+    /**
+     * Демонстрація розширених функцій.
+     */
+    private static void demonstrateAdvancedFeatures() {
+        System.out.println("6. Розширені функції:");
+        
+        // Процедурна генерація світу
+        System.out.println("  6.1. Процедурна генерація:");
+        ProceduralWorldGenerator worldGen = new ProceduralWorldGenerator(System.currentTimeMillis());
+        ChunkData chunk = worldGen.generateChunk(0, 0);
+        System.out.println("    Згенеровано чанк (0,0) з біомом: " + chunk.getBiome());
+        
+        // Штучний інтелект
+        System.out.println("  6.2. Штучний інтелект:");
+        BehaviorTree ai = new BehaviorTree(null);
+        SequenceNode behavior = new SequenceNode();
+        behavior.addChild(new FindPlayerNode(10.0));
+        behavior.addChild(new MoveToNode(new Vector3D(5, 64, 5), 3.0));
+        behavior.addChild(new AttackNode(3.0, 2.0));
+        System.out.println("    Створено дерево поведінки NPC з 3 діями");
+        
+        // Пошук шляхів
+        System.out.println("  6.3. Пошук шляхів:");
+        WorldGrid grid = new WorldGrid();
+        AStarPathfinder pathfinder = new AStarPathfinder(grid);
+        System.out.println("    Створено систему пошуку шляхів A*");
+        
+        // Фізика
+        System.out.println("  6.4. Фізика:");
+        PhysicsWorld physics = new PhysicsWorld();
+        RigidBody body = new RigidBody(new Vector3D(0, 64, 0), 2.5);
+        physics.addBody(body);
+        System.out.println("    Створено фізичне тіло з масою " + body.getMass());
     }
 }

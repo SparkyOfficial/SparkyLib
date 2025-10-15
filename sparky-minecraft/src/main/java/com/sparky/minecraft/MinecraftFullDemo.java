@@ -11,6 +11,16 @@ import com.sparky.minecraft.math.Vector3D;
 import com.sparky.minecraft.particles.ParticleEffect3D;
 import com.sparky.minecraft.particles.ParticlePhysics;
 import com.sparky.minecraft.particles.ParticleSystem;
+// додаємо імпорти нових функцій
+import com.sparky.minecraft.world.ProceduralWorldGenerator;
+import com.sparky.minecraft.world.ChunkData;
+import com.sparky.minecraft.ai.BehaviorTree;
+import com.sparky.minecraft.pathfinding.AStarPathfinder;
+import com.sparky.minecraft.pathfinding.WorldGrid;
+import com.sparky.minecraft.physics.PhysicsWorld;
+import com.sparky.minecraft.physics.RigidBody;
+import com.sparky.minecraft.audio.AudioManager;
+import com.sparky.minecraft.rendering.RenderEngine;
 
 /**
  * Повна демонстрація бібліотеки Sparky для Minecraft.
@@ -34,6 +44,11 @@ public class MinecraftFullDemo {
         
         // Демонстрація ECS систем
         demonstrateECS();
+        
+        System.out.println();
+        
+        // Демонстрація нових розширених можливостей
+        demonstrateAdvancedFeatures();
         
         System.out.println("\n=== Демонстрація завершена ===");
     }
@@ -174,5 +189,42 @@ public class MinecraftFullDemo {
         EntityComponent updatedPlayerComponent = updatedPlayerEntity.getComponent(EntityComponent.class);
         System.out.println("    Нова позиція: " + updatedPlayerComponent.getPosition());
         System.out.println("    Нове здоров'я: " + updatedPlayerComponent.getHealth());
+    }
+    
+    /**
+     * Демонстрація розширених можливостей.
+     */
+    private static void demonstrateAdvancedFeatures() {
+        System.out.println("4. Розширені можливості:");
+        
+        // Процедурна генерація світу
+        System.out.println("  4.1. Процедурна генерація світу:");
+        ProceduralWorldGenerator generator = new ProceduralWorldGenerator(12345);
+        ChunkData chunk = generator.generateChunk(0, 0);
+        System.out.println("    Згенеровано чанк (0,0) з біомом: " + chunk.getBiome());
+        
+        // Пошук шляхів
+        System.out.println("  4.2. Пошук шляхів:");
+        WorldGrid grid = new WorldGrid();
+        AStarPathfinder pathfinder = new AStarPathfinder(grid);
+        System.out.println("    Створено систему пошуку шляхів A*");
+        
+        // Фізика
+        System.out.println("  4.3. Фізика:");
+        PhysicsWorld physicsWorld = new PhysicsWorld();
+        RigidBody body = new RigidBody(new Vector3D(0, 64, 0), 1.0);
+        physicsWorld.addBody(body);
+        System.out.println("    Створено фізичне тіло з масою: " + body.getMass());
+        
+        // Аудіо
+        System.out.println("  4.4. Аудіо система:");
+        AudioManager audioManager = new AudioManager();
+        System.out.println("    Створено аудіо менеджер");
+        
+        // Рендеринг
+        System.out.println("  4.5. Рендеринг:");
+        RenderEngine renderEngine = new RenderEngine();
+        renderEngine.initialize();
+        System.out.println("    Ініціалізовано рендер двигун");
     }
 }

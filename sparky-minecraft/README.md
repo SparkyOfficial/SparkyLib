@@ -9,13 +9,21 @@
 - Математичні бібліотеки для 3D обчислень
 - Системи частинок та візуальних ефектів
 - Повна інтеграція з Bukkit/Spigot API
+- Процедурна генерація світу
+- Штучний інтелект для NPC
+- Фізика та пошук шляхів
+- Аудіо та рендеринг системи
+- Мережева взаємодія
+- Скрипти та машинне навчання
 
 ## Використання
 
 Дивіться демонстраційні класи для прикладів використання.
+
 # SparkyLib Minecraft Adapter
 ## Overview
 The SparkyLib Minecraft Adapter is a specialized library that extends the core SparkyLib framework to provide seamless integration with Minecraft (Bukkit/Spigot) servers. It leverages the Entity-Component-System (ECS) architecture to create a powerful and flexible framework for Minecraft plugin development.
+
 ## Installation
 
 Add the following dependency to your `pom.xml`:
