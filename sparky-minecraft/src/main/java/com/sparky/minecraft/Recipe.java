@@ -23,6 +23,31 @@ public class Recipe {
         this.craftingTime = 1000; // 1 секунда за замовчуванням
     }
     
+    // Новий конструктор для підтримки масиву інгредієнтів
+    public Recipe(String recipeId, String[] ingredientArray, ItemStack result) {
+        this(recipeId, result);
+        processIngredientArray(ingredientArray);
+    }
+    
+    // Обробляє масив інгредієнтів і додає їх до рецепта
+    private void processIngredientArray(String[] ingredientArray) {
+        if (ingredientArray == null) return;
+        
+        Map<String, Integer> ingredientCounts = new HashMap<>();
+        
+        // Підраховуємо кількість кожного інгредієнта
+        for (String ingredient : ingredientArray) {
+            if (ingredient != null && !ingredient.isEmpty()) {
+                ingredientCounts.put(ingredient, ingredientCounts.getOrDefault(ingredient, 0) + 1);
+            }
+        }
+        
+        // Додаємо інгредієнти до рецепта
+        for (Map.Entry<String, Integer> entry : ingredientCounts.entrySet()) {
+            addIngredient(entry.getKey(), entry.getValue());
+        }
+    }
+    
     /**
      * Додає інгредієнт до рецепта.
      *
@@ -136,6 +161,37 @@ public class Recipe {
     
     public void setCraftingTime(int craftingTime) {
         this.craftingTime = craftingTime;
+    }
+    
+    // Метод для перевірки відповідності інгредієнтів
+    public boolean matches(String[] inputIngredients) {
+        if (inputIngredients == null) return false;
+        
+        // Підраховуємо кількість кожного інгредієнта у вхідному масиві
+        Map<String, Integer> inputCounts = new HashMap<>();
+        for (String ingredient : inputIngredients) {
+            if (ingredient != null && !ingredient.isEmpty()) {
+                inputCounts.put(ingredient, inputCounts.getOrDefault(ingredient, 0) + 1);
+            }
+        }
+        
+        // Порівнюємо з необхідними інгредієнтами
+        for (Map.Entry<String, Integer> required : ingredients.entrySet()) {
+            String itemType = required.getKey();
+            int requiredAmount = required.getValue();
+            int inputAmount = inputCounts.getOrDefault(itemType, 0);
+            
+            if (inputAmount < requiredAmount) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    // Метод для отримання імені рецепта
+    public String getName() {
+        return recipeId;
     }
     
     @Override

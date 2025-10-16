@@ -456,54 +456,52 @@ public class TerrainGenerator {
         // Визначаємо ймовірність появи структур
         double structureChance = 0.0;
         
+        // Визначаємо ймовірність появи структур на основі типу біому
         switch (biomeType) {
-            case VILLAGE:
-                structureChance = 0.1;
+            case DESERT:
+                structureChance = 0.05; // Піраміда в пустелі
                 break;
-            case DESERT_PYRAMID:
-                structureChance = 0.05;
+            case JUNGLE:
+            case JUNGLE_HILLS:
+                structureChance = 0.05; // Храм джунглів
                 break;
-            case JUNGLE_TEMPLE:
-                structureChance = 0.05;
+            case SNOWY_TUNDRA:
+            case SNOWY_MOUNTAINS:
+                structureChance = 0.05; // Іглу в снігових біомах
                 break;
-            case IGLOO:
-                structureChance = 0.05;
+            case PLAINS:
+            case SUNFLOWER_PLAINS:
+                structureChance = 0.03; // Аутпост піліжерів
                 break;
-            case PILLAGER_OUTPOST:
-                structureChance = 0.03;
+            case OCEAN:
+            case DEEP_OCEAN:
+            case WARM_OCEAN:
+            case LUKEWARM_OCEAN:
+            case COLD_OCEAN:
+            case DEEP_WARM_OCEAN:
+            case DEEP_LUKEWARM_OCEAN:
+            case DEEP_COLD_OCEAN:
+            case DEEP_FROZEN_OCEAN:
+                structureChance = 0.03; // Затонулі кораблі та океанські монументи
                 break;
-            case MINESHAFT:
-                structureChance = 0.1;
+            case FOREST:
+            case BIRCH_FOREST:
+            case DARK_FOREST:
+                structureChance = 0.01; // Лісова оселя
                 break;
-            case STRONGHOLD:
-                structureChance = 0.02;
+            case TAIGA:
+            case SNOWY_TAIGA:
+            case GIANT_TREE_TAIGA:
+                structureChance = 0.02; // Міцність
                 break;
-            case OCEAN_MONUMENT:
-                structureChance = 0.01;
+            case NETHER:
+                structureChance = 0.1; // Форт Незеру
                 break;
-            case WOODLAND_MANSION:
-                structureChance = 0.01;
-                break;
-            case BURIED_TREASURE:
-                structureChance = 0.02;
-                break;
-            case SHIPWRECK:
-                structureChance = 0.03;
-                break;
-            case RUINED_PORTAL:
-                structureChance = 0.05;
-                break;
-            case NETHER_FORTRESS:
-                structureChance = 0.1;
-                break;
-            case BASTION_REMNANT:
-                structureChance = 0.05;
-                break;
-            case END_CITY:
-                structureChance = 0.05;
+            case END:
+                structureChance = 0.05; // Місто Енду
                 break;
             default:
-                structureChance = 0.01;
+                structureChance = 0.01; // Стандартна ймовірність
                 break;
         }
         

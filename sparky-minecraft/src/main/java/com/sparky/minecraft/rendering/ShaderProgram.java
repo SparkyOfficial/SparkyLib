@@ -13,7 +13,7 @@ public class ShaderProgram {
     public ShaderProgram(String vertexShaderFile, String fragmentShaderFile) {
         this.vertexShaderFile = vertexShaderFile;
         this.fragmentShaderFile = fragmentShaderFile;
-        this.complied = false;
+        this.compiled = false;
         
         // тут була б логіка компіляції шейдерів
         compileShaders();
@@ -23,7 +23,7 @@ public class ShaderProgram {
     private void compileShaders() {
         // тут була б реальна логіка компіляції шейдерів
         // для прикладу просто встановлюємо прапорець
-        this.complied = true;
+        this.compiled = true;
         System.out.println("Compiling shaders: " + vertexShaderFile + ", " + fragmentShaderFile);
     }
     

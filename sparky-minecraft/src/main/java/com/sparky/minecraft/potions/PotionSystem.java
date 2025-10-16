@@ -665,29 +665,29 @@ public class PotionSystem {
     private PotionType getLongPotionVariant(PotionType basePotion) {
         switch (basePotion) {
             case NIGHT_VISION:
-                return LONG_NIGHT_VISION;
+                return PotionType.LONG_NIGHT_VISION;
             case INVISIBILITY:
-                return LONG_INVISIBILITY;
+                return PotionType.LONG_INVISIBILITY;
             case LEAPING:
-                return LONG_LEAPING;
+                return PotionType.LONG_LEAPING;
             case FIRE_RESISTANCE:
-                return LONG_FIRE_RESISTANCE;
+                return PotionType.LONG_FIRE_RESISTANCE;
             case SWIFTNESS:
-                return LONG_SWIFTNESS;
+                return PotionType.LONG_SWIFTNESS;
             case SLOWNESS:
-                return LONG_SLOWNESS;
+                return PotionType.LONG_SLOWNESS;
             case WATER_BREATHING:
-                return LONG_WATER_BREATHING;
+                return PotionType.LONG_WATER_BREATHING;
             case POISON:
-                return LONG_POISON;
+                return PotionType.LONG_POISON;
             case REGENERATION:
-                return LONG_REGENERATION;
+                return PotionType.LONG_REGENERATION;
             case STRENGTH:
-                return LONG_STRENGTH;
+                return PotionType.LONG_STRENGTH;
             case WEAKNESS:
-                return LONG_WEAKNESS;
+                return PotionType.LONG_WEAKNESS;
             case SLOW_FALLING:
-                return LONG_SLOW_FALLING;
+                return PotionType.LONG_SLOW_FALLING;
             default:
                 return basePotion;
         }
@@ -699,19 +699,19 @@ public class PotionSystem {
     private PotionType getStrongPotionVariant(PotionType basePotion) {
         switch (basePotion) {
             case HEALING:
-                return STRONG_HEALING;
+                return PotionType.STRONG_HEALING;
             case HARMING:
-                return STRONG_HARMING;
+                return PotionType.STRONG_HARMING;
             case POISON:
-                return STRONG_POISON;
+                return PotionType.STRONG_POISON;
             case REGENERATION:
-                return STRONG_REGENERATION;
+                return PotionType.STRONG_REGENERATION;
             case STRENGTH:
-                return STRONG_STRENGTH;
+                return PotionType.STRONG_STRENGTH;
             case LEAPING:
-                return STRONG_LEAPING;
+                return PotionType.STRONG_LEAPING;
             case SWIFTNESS:
-                return STRONG_SWIFTNESS;
+                return PotionType.STRONG_SWIFTNESS;
             default:
                 return basePotion;
         }

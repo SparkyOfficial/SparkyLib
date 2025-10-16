@@ -1,5 +1,9 @@
 package com.sparky.minecraft;
 
+import com.sparky.minecraft.enchantments.EnchantmentSystem.Enchantment;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Представляє стак предметів в інвентарі Minecraft.
  *
@@ -10,6 +14,7 @@ public class ItemStack {
     private int amount;
     private short durability;
     private int maxStackSize;
+    private List<Enchantment> enchantments;
     
     public ItemStack() {
         this("air", 1, (short) 0, 64);
@@ -28,6 +33,27 @@ public class ItemStack {
         this.amount = Math.max(1, amount);
         this.durability = durability;
         this.maxStackSize = Math.max(1, maxStackSize);
+        this.enchantments = new ArrayList<>();
+    }
+    
+    /**
+     * Додає зачарування до предмета.
+     *
+     * @param enchantment зачарування для додавання
+     */
+    public void addEnchantment(Enchantment enchantment) {
+        if (enchantment != null) {
+            enchantments.add(enchantment);
+        }
+    }
+    
+    /**
+     * Отримує список зачарувань предмета.
+     *
+     * @return список зачарувань
+     */
+    public List<Enchantment> getEnchantments() {
+        return new ArrayList<>(enchantments);
     }
     
     /**
@@ -115,7 +141,12 @@ public class ItemStack {
      * @return копія стаку
      */
     public ItemStack copy() {
-        return new ItemStack(itemType, amount, durability, maxStackSize);
+        ItemStack copy = new ItemStack(itemType, amount, durability, maxStackSize);
+        // Копіюємо зачарування
+        for (Enchantment enchantment : enchantments) {
+            copy.addEnchantment(enchantment);
+        }
+        return copy;
     }
     
     @Override
@@ -125,6 +156,7 @@ public class ItemStack {
                 ", amount=" + amount +
                 ", durability=" + durability +
                 ", maxStackSize=" + maxStackSize +
+                ", enchantments=" + enchantments +
                 '}';
     }
 }

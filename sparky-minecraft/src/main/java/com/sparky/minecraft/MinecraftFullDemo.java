@@ -21,6 +21,8 @@ import com.sparky.minecraft.physics.PhysicsWorld;
 import com.sparky.minecraft.physics.RigidBody;
 import com.sparky.minecraft.audio.AudioManager;
 import com.sparky.minecraft.rendering.RenderEngine;
+import com.sparky.minecraft.villagers.VillagerTradingSystem;
+import com.sparky.minecraft.villagers.VillagerTradingDemo;
 
 /**
  * Повна демонстрація бібліотеки Sparky для Minecraft.
@@ -49,6 +51,11 @@ public class MinecraftFullDemo {
         
         // Демонстрація нових розширених можливостей
         demonstrateAdvancedFeatures();
+        
+        // Демонстрація торгівлі з селянами
+        System.out.println();
+        VillagerTradingDemo tradingDemo = new VillagerTradingDemo();
+        tradingDemo.demonstrateAllFeatures();
         
         System.out.println("\n=== Демонстрація завершена ===");
     }
@@ -226,5 +233,10 @@ public class MinecraftFullDemo {
         RenderEngine renderEngine = new RenderEngine();
         renderEngine.initialize();
         System.out.println("    Ініціалізовано рендер двигун");
+        
+        // Торгівля з селянами
+        System.out.println("  4.6. Торгівля з селянами:");
+        VillagerTradingSystem tradingSystem = new VillagerTradingSystem();
+        System.out.println("    Створено систему торгівлі з селянами");
     }
 }

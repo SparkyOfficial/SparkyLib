@@ -332,7 +332,7 @@ public class AdvancedCraftingSystem {
         if (enableCriticalCrafting && random.nextDouble() < 0.05) {
             isCritical = true;
             // Подвоюємо результат при критичному крафтингу
-            result = new ItemStack(result.getType(), result.getAmount() * 2);
+            result = new ItemStack(result.getItemType(), result.getAmount() * 2);
         }
         
         // Отримуємо досвід за крафтинг
@@ -343,7 +343,7 @@ public class AdvancedCraftingSystem {
         
         // Створюємо результат крафтингу
         String message = isCritical ? "Critical craft! " : "";
-        message += "Successfully crafted " + result.getType();
+        message += "Successfully crafted " + result.getItemType();
         
         return new CraftingResult(true, result, message, experienceGained, isCritical);
     }
@@ -360,7 +360,7 @@ public class AdvancedCraftingSystem {
         int baseExp = recipe.getResult().getAmount();
         
         // Модифікатор складності рецепту
-        int complexityModifier = recipe.getIngredients().length;
+        int complexityModifier = recipe.getIngredients().size();
         
         // Модифікатор рівня гравця (чим нижче рівень, тим більше досвіду)
         double levelModifier = Math.max(0.5, 2.0 - (playerLevel / 50.0));

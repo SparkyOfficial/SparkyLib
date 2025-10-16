@@ -1,32 +1,41 @@
 # Sparky Minecraft Library
 
-Спеціалізована бібліотека для розробки плагінів Minecraft на основі архітектури Entity-Component-System (ECS).
+A comprehensive Minecraft library built in Java with advanced features for game development.
 
-## Основні можливості
+## Features
 
-- Компоненти та системи для основних елементів Minecraft
-- Системи інвентаризації, крафтингу, квестів, NPC
-- Математичні бібліотеки для 3D обчислень
-- Системи частинок та візуальних ефектів
-- Повна інтеграція з Bukkit/Spigot API
-- Процедурна генерація світу
-- Штучний інтелект для NPC
-- Фізика та пошук шляхів
-- Аудіо та рендеринг системи
-- Мережева взаємодія
-- Скрипти та машинне навчання
+### Audio System
+- 3D spatial audio with realistic sound positioning
+- Multiple audio sources and listeners
+- Sound effects and ambient sounds
+- Volume control and audio management
 
-## Використання
+### Redstone System
+- Complete redstone circuit simulation
+- Component-based architecture with levers, wires, lamps, pistons
+- Signal propagation and power management
+- Complex circuit support
 
-Дивіться демонстраційні класи для прикладів використання.
+### Rendering System
+- Advanced 3D rendering engine
+- Camera system with perspective projection
+- Lighting system with point and directional lights
+- Texture management and shader support
+- Particle effects and weather rendering
 
-# SparkyLib Minecraft Adapter
-## Overview
-The SparkyLib Minecraft Adapter is a specialized library that extends the core SparkyLib framework to provide seamless integration with Minecraft (Bukkit/Spigot) servers. It leverages the Entity-Component-System (ECS) architecture to create a powerful and flexible framework for Minecraft plugin development.
+### Particle System
+- Physics-based particle simulation
+- Explosion, rain, and fire effects
+- Collision detection and response
+- Customizable particle behaviors
+
+### Weather System
+- Dynamic weather simulation
+- Rain, thunderstorms, snow, and fog
+- Wind effects and temperature simulation
+- Smooth weather transitions
 
 ## Installation
-
-Add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -36,52 +45,45 @@ Add the following dependency to your `pom.xml`:
 </dependency>
 ```
 
-## Usage Example
+## Usage
 
+### Audio System
 ```java
-// Initialize the Minecraft adapter
-MinecraftAdapter minecraftAdapter = new MinecraftAdapter(yourPlugin);
-
-// Create a player entity
-Entity playerEntity = minecraftAdapter.getEntityManager().createEntity();
-PlayerComponent playerComponent = new PlayerComponent(
-    "Steve", 
-    "player-uuid", 
-    20, 20, 15, 10, 0.5f, true
-);
-playerEntity.addComponent(playerComponent);
-
-// Create a block entity
-Entity blockEntity = minecraftAdapter.getEntityManager().createEntity();
-BlockComponent blockComponent = new BlockComponent(
-    "diamond_ore", 
-    50, 64, 50, 
-    "world"
-);
-blockEntity.addComponent(blockComponent);
-
-// The systems will automatically process these entities
-minecraftAdapter.update();
+AudioManager audioManager = new AudioManager();
+audioManager.loadSound("ambient", "ambient/cave_ambience.wav");
+audioManager.playSound("ambient");
 ```
 
-## Architecture
+### Redstone System
+```java
+RedstoneSystem redstoneSystem = new RedstoneSystem();
+Vector3D leverPos = new Vector3D(0, 64, 0);
+RedstoneComponent lever = new RedstoneComponent(
+    RedstoneComponentType.LEVER, leverPos);
+redstoneSystem.addComponent(lever);
+```
 
-The Minecraft adapter follows the same ECS pattern as the core SparkyLib:
+### Rendering System
+```java
+RenderEngine renderEngine = new RenderEngine();
+renderEngine.initialize();
+Camera camera = renderEngine.getCamera();
+```
 
-1. **Entities** - Game objects that hold components
-2. **Components** - Data containers that describe aspects of an entity
-3. **Systems** - Logic processors that operate on entities with specific components
+## Testing
 
-This architecture allows for:
-- High performance through data-oriented design
-- Easy extensibility by adding new components and systems
-- Clear separation of concerns
-- Flexible entity composition
+Run tests with Maven:
+```bash
+mvn test
+```
 
-## Requirements
-- Java 17 or higher
-- Bukkit/Spigot 1.19.4 or compatible
-- SparkyLib core modules
+## Demo
+
+Run the complete demo:
+```bash
+mvn compile exec:java
+```
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+This project is licensed under the MIT License.
